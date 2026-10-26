@@ -8,14 +8,19 @@ on:
 
 jobs:
   test:
-    runs-on: ubuntu-latest
+    runs-on: ${{ matrix.os }}
     strategy:
       fail-fast: false
       matrix:
-        # 3.9 is the floor the README claims, so it gets tested rather
-        # than assumed. The newest version catches deprecations early.
-        python-version: ["3.9", "3.11", "3.13"]
+        include:
+          # 3.9 is the floor README and pyproject claim, so it gets tested
+          # rather than assumed. It is past end-of-life, so it only exists
+          # on older runner images — hence the explicit pairing.
+          - { python-version: "3.9", os: ubuntu-22.04 }
+          - { python-version: "3.11", os: ubuntu-latest }
+          - { python-version: "3.13", os: ubuntu-latest }
 
+    name: test (py${{ matrix.python-version }})
     steps:
       - uses: actions/checkout@v4
 
@@ -33,6 +38,6 @@ jobs:
         run: pytest
 
       - name: Verify it runs with no install at all
-        # The main claim in the README is that a bare clone works with
+        # The central claim in the README is that a bare clone works on
         # nothing but the standard library. Worth proving on every push.
         run: python spread_audit.py examples/trades.csv --bootstrap 0

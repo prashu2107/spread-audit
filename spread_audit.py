@@ -273,7 +273,8 @@ def parse_time(raw) -> datetime | None:
         pass
     for fmt in TIME_FORMATS:
         try:
-            return datetime.strptime(text, fmt)  # noqa: DTZ007 - tz dropped on purpose
+            # Timezone is dropped deliberately; see the docstring above.
+            return datetime.strptime(text, fmt)
         except ValueError:
             continue
     return None
