@@ -1,6 +1,6 @@
 # spread-audit
 
-[![tests](https://github.com/<you>/spread-audit/actions/workflows/tests.yml/badge.svg)](https://github.com/<you>/spread-audit/actions/workflows/tests.yml)
+[![tests](https://github.com/prashu2107/spread-audit/actions/workflows/tests.yml/badge.svg)](https://github.com/prashu2107/spread-audit/actions/workflows/tests.yml)
 
 **Does your strategy's edge survive its own costs?**
 
@@ -97,7 +97,7 @@ compounds and one that bleeds.
 There is nothing to install. Clone it, or download the single file:
 
 ```bash
-curl -O https://raw.githubusercontent.com/<you>/spread-audit/main/spread_audit.py
+curl -O https://raw.githubusercontent.com/prashu2107/spread-audit/main/spread_audit.py
 python spread_audit.py trades.csv
 ```
 
