@@ -1,5 +1,7 @@
 # spread-audit
 
+[![tests](https://github.com/<you>/spread-audit/actions/workflows/tests.yml/badge.svg)](https://github.com/<you>/spread-audit/actions/workflows/tests.yml)
+
 **Does your strategy's edge survive its own costs?**
 
 One file. Standard library only. No install, no dependencies, no account

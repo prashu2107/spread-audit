@@ -17,3 +17,6 @@ audit.json
 per_trade.csv
 *.local.csv
 logs/
+
+# One-time publishing helper — yours, not for the published repo.
+publish.sh
